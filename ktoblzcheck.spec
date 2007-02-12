@@ -1,5 +1,5 @@
 Summary:	A library to check account numbers and bank codes of German banks
-Summary(pl):	Biblioteka do sprawdzania numerów kont i kodów bankowych niemieckich banków
+Summary(pl.UTF-8):   Biblioteka do sprawdzania numerÃ³w kont i kodÃ³w bankowych niemieckich bankÃ³w
 Name:		ktoblzcheck
 Version:	1.12
 Release:	1
@@ -22,18 +22,18 @@ is available. It is possible to check pairs of account numbers and
 bank codes (BLZ) of German banks, and to map bank codes (BLZ) to the
 clear-text name and location of the bank.
 
-%description -l pl
-KtoBLZCheck to biblioteka do sprawdzania numerów kont i kodów
-bankowych niemieckich banków.
+%description -l pl.UTF-8
+KtoBLZCheck to biblioteka do sprawdzania numerÃ³w kont i kodÃ³w
+bankowych niemieckich bankÃ³w.
 
-Dostêpna jest zarówno biblioteka jak i proste narzêdzie dzia³aj±ce z
-linii poleceñ. Pozwalaj± na sprawdzenie par numerów kont i kodów
-bankowych (BLZ) niemieckich banków oraz na zamianê kodów bankowych
-(BLZ) na tekstow± nazwê oraz lokalizacjê banku.
+DostÄ™pna jest zarÃ³wno biblioteka jak i proste narzÄ™dzie dziaÅ‚ajÄ…ce z
+linii poleceÅ„. PozwalajÄ… na sprawdzenie par numerÃ³w kont i kodÃ³w
+bankowych (BLZ) niemieckich bankÃ³w oraz na zamianÄ™ kodÃ³w bankowych
+(BLZ) na tekstowÄ… nazwÄ™ oraz lokalizacjÄ™ banku.
 
 %package devel
 Summary:	Header files for KtoBLZCheck library
-Summary(pl):	Pliki nag³ówkowe biblioteki KtoBLZCheck
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki KtoBLZCheck
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -41,24 +41,24 @@ Requires:	libstdc++-devel
 %description devel
 Header files for KtoBLZCheck library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki KtoBLZCheck.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki KtoBLZCheck.
 
 %package static
 Summary:	Static KtoBLZCheck library
-Summary(pl):	Statyczna biblioteka KtoBLZCheck
+Summary(pl.UTF-8):   Statyczna biblioteka KtoBLZCheck
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static KtoBLZCheck library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka KtoBLZCheck.
 
 %package -n python-ktoblzcheck
 Summary:	Python binding for KtoBLZCheck library
-Summary(pl):	Wi±zanie Pythona dla biblioteki KtoBLZCheck
+Summary(pl.UTF-8):   WiÄ…zanie Pythona dla biblioteki KtoBLZCheck
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-ctypes
@@ -67,8 +67,8 @@ Requires:	python-ctypes
 %description -n python-ktoblzcheck
 Python binding for KtoBLZCheck library.
 
-%description -n python-ktoblzcheck -l pl
-Wi±zanie Pythona dla biblioteki KtoBLZCheck.
+%description -n python-ktoblzcheck -l pl.UTF-8
+WiÄ…zanie Pythona dla biblioteki KtoBLZCheck.
 
 %prep
 %setup -q
