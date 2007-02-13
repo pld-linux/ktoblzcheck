@@ -1,5 +1,5 @@
 Summary:	A library to check account numbers and bank codes of German banks
-Summary(pl.UTF-8):   Biblioteka do sprawdzania numerów kont i kodów bankowych niemieckich banków
+Summary(pl.UTF-8):	Biblioteka do sprawdzania numerów kont i kodów bankowych niemieckich banków
 Name:		ktoblzcheck
 Version:	1.12
 Release:	1
@@ -33,7 +33,7 @@ bankowych (BLZ) niemieckich banków oraz na zamianę kodów bankowych
 
 %package devel
 Summary:	Header files for KtoBLZCheck library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki KtoBLZCheck
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki KtoBLZCheck
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -46,7 +46,7 @@ Pliki nagłówkowe biblioteki KtoBLZCheck.
 
 %package static
 Summary:	Static KtoBLZCheck library
-Summary(pl.UTF-8):   Statyczna biblioteka KtoBLZCheck
+Summary(pl.UTF-8):	Statyczna biblioteka KtoBLZCheck
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -58,7 +58,7 @@ Statyczna biblioteka KtoBLZCheck.
 
 %package -n python-ktoblzcheck
 Summary:	Python binding for KtoBLZCheck library
-Summary(pl.UTF-8):   Wiązanie Pythona dla biblioteki KtoBLZCheck
+Summary(pl.UTF-8):	Wiązanie Pythona dla biblioteki KtoBLZCheck
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	python-ctypes
