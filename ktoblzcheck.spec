@@ -1,12 +1,12 @@
 Summary:	A library to check account numbers and bank codes of German banks
 Summary(pl.UTF-8):	Biblioteka do sprawdzania numerów kont i kodów bankowych niemieckich banków
 Name:		ktoblzcheck
-Version:	1.14
+Version:	1.15
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/ktoblzcheck/%{name}-%{version}.tar.gz
-# Source0-md5:	1ba219f380d2efd631f04a50c7021131
+# Source0-md5:	5f108b92abe332c6ca3701c6cb98fd76
 URL:		http://ktoblzcheck.sourceforge.net/
 BuildRequires:	libstdc++-devel
 BuildRequires:	python-devel >= 1:2.3
@@ -98,6 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/ktoblzcheck
 %attr(755,root,root) %{_libdir}/libktoblzcheck.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libktoblzcheck.so.1
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.txt
 %attr(755,root,root) %{_datadir}/%{name}/*.pl
@@ -107,7 +108,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libktoblzcheck.so
 %{_libdir}/libktoblzcheck.la
-%{_includedir}/*.h
+%{_includedir}/iban.h
+%{_includedir}/ktoblzcheck.h
 %{_pkgconfigdir}/ktoblzcheck.pc
 
 %files static
