@@ -9,7 +9,7 @@ Source0:	http://dl.sourceforge.net/ktoblzcheck/%{name}-%{version}.tar.gz
 # Source0-md5:	df8c4f35d8977e78f8445efc1d20a2a8
 URL:		http://ktoblzcheck.sourceforge.net/
 BuildRequires:	libstdc++-devel
-BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,9 +61,8 @@ Summary:	Python binding for KtoBLZCheck library
 Summary(pl.UTF-8):	Wiązanie Pythona dla biblioteki KtoBLZCheck
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-# for python-ctypes
-Requires:	python-modules >= 1:2.5
-%pyrequires_eq	python-libs
+# for python-ctypes (>= 1:2.5 already forced by BR + _eq below)
+%pyrequires_eq	python-modules
 
 %description -n python-ktoblzcheck
 Python binding for KtoBLZCheck library.
