@@ -1,12 +1,13 @@
 Summary:	A library to check account numbers and bank codes of German banks
 Summary(pl.UTF-8):	Biblioteka do sprawdzania numerów kont i kodów bankowych niemieckich banków
 Name:		ktoblzcheck
-Version:	1.31
+Version:	1.32
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ktoblzcheck/%{name}-%{version}.tar.gz
-# Source0-md5:	2bc5fd7b3d6785527f7f0ea565c35e29
+# Source0-md5:	bc08e0d781214dfbd858310691373856
+Patch0:		%{name}-soname.patch
 URL:		http://ktoblzcheck.sourceforge.net/
 BuildRequires:	libstdc++-devel
 BuildRequires:	python-devel >= 1:2.5
@@ -72,6 +73,7 @@ Wiązanie Pythona dla biblioteki KtoBLZCheck.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \

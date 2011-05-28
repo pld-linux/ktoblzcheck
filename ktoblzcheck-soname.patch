@@ -1,0 +1,11 @@
+--- ktoblzcheck-1.32/configure.ac.orig	2011-05-21 23:12:17.000000000 +0200
++++ ktoblzcheck-1.32/configure.ac	2011-05-28 08:42:51.917242984 +0200
+@@ -19,7 +19,7 @@
+ 
+ # shared library version numbers
+ LIBKTOBLZCHECK_CURRENT=6
+-LIBKTOBLZCHECK_AGE=6
++LIBKTOBLZCHECK_AGE=5
+ LIBKTOBLZCHECK_REVISION=15
+ # is unused for now, but might be used later
+ LIBKTOBLZCHECK_EFFECTIVE="`echo \$(($LIBKTOBLZCHECK_CURRENT-$LIBKTOBLZCHECK_AGE))`"
