@@ -1,12 +1,16 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static library
+#
 Summary:	A library to check account numbers and bank codes of German banks
 Summary(pl.UTF-8):	Biblioteka do sprawdzania numerów kont i kodów bankowych niemieckich banków
 Name:		ktoblzcheck
-Version:	1.45
-Release:	3
+Version:	1.48
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/ktoblzcheck/%{name}-%{version}.tar.gz
-# Source0-md5:	80719a2920a40c6a01fa2a70ecc23e48
+# Source0-md5:	6f56c83a649cbdaf1aad3e04a7b7a8ce
 URL:		http://ktoblzcheck.sourceforge.net/
 BuildRequires:	libstdc++-devel
 BuildRequires:	python-devel >= 1:2.5
@@ -61,8 +65,7 @@ Summary:	Python binding for KtoBLZCheck library
 Summary(pl.UTF-8):	Wiązanie Pythona dla biblioteki KtoBLZCheck
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-# for python-ctypes (>= 1:2.5 already forced by BR + _eq below)
-%pyrequires_eq	python-modules
+Requires:	python-modules >= 1:2.5
 
 %description -n python-ktoblzcheck
 Python binding for KtoBLZCheck library.
@@ -76,7 +79,7 @@ Wiązanie Pythona dla biblioteki KtoBLZCheck.
 %build
 %configure \
 	--enable-python \
-	--enable-static
+	%{?with_static_libs:--enable-static}
 %{__make}
 
 %install
@@ -84,6 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libktoblzcheck.la
 
 %py_postclean
 
@@ -107,14 +113,15 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libktoblzcheck.so
-%{_libdir}/libktoblzcheck.la
 %{_includedir}/iban.h
 %{_includedir}/ktoblzcheck.h
 %{_pkgconfigdir}/ktoblzcheck.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libktoblzcheck.a
+%endif
 
 %files -n python-ktoblzcheck
 %defattr(644,root,root,755)
