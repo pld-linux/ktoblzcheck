@@ -1,0 +1,27 @@
+Let BUILD_STATIC enable just static libktoblzcheck library
+--- ktoblzcheck-1.53/CMakeLists.txt.orig	2020-04-20 14:58:13.000000000 +0200
++++ ktoblzcheck-1.53/CMakeLists.txt	2023-10-28 10:50:05.477775268 +0200
+@@ -17,10 +17,6 @@ set(BANK_WEBSITE_PATH /de/aufgaben/unbar
+ 
+ option(INSTALL_SEPA_BANKDATA_FILE "Install sepa provider data file in csv format" OFF)
+ option(BUILD_STATIC "build static library and executables" OFF)
+-if(BUILD_STATIC)
+-    set(LIBS -static -static-libgcc -static-libstdc++)
+-    set(CMAKE_BUILD_TYPE Release)
+-endif()
+ 
+ # provide gnu compatible install dirs
+ include(GNUInstallDirs)
+--- ktoblzcheck-1.53/src/bin/CMakeLists.txt.orig	2020-04-20 14:57:36.000000000 +0200
++++ ktoblzcheck-1.53/src/bin/CMakeLists.txt	2023-10-28 10:50:13.601064594 +0200
+@@ -5,10 +5,6 @@ set(ktoblzcheck_bin_SRCS ktoblzcheck.cc)
+ add_executable(ktoblzcheck-bin ${ktoblzcheck_bin_SRCS})
+ target_link_libraries(ktoblzcheck-bin ktoblzcheck)
+ set_target_properties(ktoblzcheck-bin PROPERTIES OUTPUT_NAME ktoblzcheck)
+-if(BUILD_STATIC)
+-    # strip executables
+-    set(CMAKE_EXE_LINKER_FLAGS_RELEASE -s)
+-endif()
+ 
+ install(TARGETS ktoblzcheck-bin DESTINATION bin)
+ 

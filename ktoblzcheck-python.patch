@@ -1,0 +1,28 @@
+--- ktoblzcheck-1.53/CMakeLists.txt.orig	2023-10-28 10:56:58.032206936 +0200
++++ ktoblzcheck-1.53/CMakeLists.txt	2023-10-28 11:01:35.357371203 +0200
+@@ -82,7 +82,7 @@ find_package (Python3 COMPONENTS Interpr
+ if(Python3_FOUND)
+     set(Python_EXECUTABLE ${Python3_EXECUTABLE})
+     string(REGEX REPLACE "^([0-9]+.[0-9]+).*" "\\1" Python_VERSION_MAJOR_MINOR ${Python3_VERSION})
+-    set(Python_SITEARCH "${CMAKE_INSTALL_LIBDIR}/python${Python_VERSION_MAJOR_MINOR}/site-packages")
++    set(Python_SITEARCH "${CMAKE_INSTALL_DATADIR}/python${Python_VERSION_MAJOR_MINOR}/site-packages")
+     set(Python_Interpreter_FOUND TRUE)
+     set(Python_Development_FOUND TRUE)
+ else()
+@@ -98,14 +98,14 @@ else()
+     endif()
+     if(Python2_Development_FOUND)
+         string(REGEX REPLACE "^([0-9]+.[0-9]+).*" "\\1" Python_VERSION_MAJOR_MINOR ${Python2_VERSION})
+-        set(Python_SITEARCH "${CMAKE_INSTALL_LIBDIR}/python${Python_VERSION_MAJOR_MINOR}/site-packages")
++	set(Python_SITEARCH "${CMAKE_INSTALL_DATADIR}/python${Python_VERSION_MAJOR_MINOR}/site-packages")
+         set(Python_Development_FOUND TRUE)
+     else()
+         find_package(PythonLibs 2.6 REQUIRED)
+         set(Python_Development_FOUND TRUE)
+         set(Python2_VERSION ${PYTHONLIBS_VERSION_STRING})
+         string(REGEX REPLACE "^([0-9]+.[0-9]+).*" "\\1" Python_VERSION_MAJOR_MINOR ${Python2_VERSION})
+-        set(Python_SITEARCH "${CMAKE_INSTALL_LIBDIR}/python${Python_VERSION_MAJOR_MINOR}/site-packages")
++	set(Python_SITEARCH "${CMAKE_INSTALL_DATADIR}/python${Python_VERSION_MAJOR_MINOR}/site-packages")
+     endif()
+ endif()
+ ########### configure checks ###############
